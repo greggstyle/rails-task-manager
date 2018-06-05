@@ -1,0 +1,17 @@
+<h1 class: "h1"> <%= @task.title %> </h1>
+
+
+<%= @task.details %>
+<br>
+<br>
+
+<p> <%= @task.completed%></p>
+
+<br>
+<br>
+<%= link_to "back to list", tasks_path, class: 'btn btn-info'%>
+
+<%= link_to "new tasks", new_path, class: "btn btn-success " %>
+
+<%= link_to "edit tasks", edit_path, class: "btn btn-warning" %>
+

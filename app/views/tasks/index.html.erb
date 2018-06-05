@@ -1,0 +1,17 @@
+<h1> My tasks </h1>
+
+<% @tasks.each do |task| %>
+<h2> <%= link_to task.title , task_path(task)%></h2>
+<%= form_for(task) do |f| %>
+Completed <%= f.check_box :completed %>
+<%= f.submit :good, class: "img-thumbnail active" %>
+<% end %>
+
+<%= link_to "delete", delete_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure #{task.title}?" } , class: "btn btn-danger btn-xs"%>
+<% end %>
+<br>
+<br>
+
+<%= link_to "create", new_path, class: "btn btn-success btn-lg" %>
